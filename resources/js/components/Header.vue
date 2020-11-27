@@ -14,9 +14,6 @@
           <li class="nav-item">
             <router-link to="/user" class="nav-item nav-link">User</router-link>
           </li>
-          <li class="nav-item">
-            <router-link to="/user/create" class="nav-item nav-link">add User</router-link>
-          </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

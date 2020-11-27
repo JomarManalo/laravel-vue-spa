@@ -1984,8 +1984,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'user-list'
+  name: 'user-list',
+  data: function data() {
+    return {
+      baseUrl: location.protocol + '//' + location.host,
+      users: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get(_this.baseUrl + '/api/users').then(function (response) {
+      _this.users = response.data;
+    });
+  }
 });
 
 /***/ }),
@@ -37632,22 +37663,6 @@ var render = function() {
                   )
                 ],
                 1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                { staticClass: "nav-item" },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "nav-item nav-link",
-                      attrs: { to: "/user/create" }
-                    },
-                    [_vm._v("add User")]
-                  )
-                ],
-                1
               )
             ]),
             _vm._v(" "),
@@ -37802,11 +37817,46 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "content" }, [
-    _vm._v("\n    This is our user list.\n")
+  return _c("div", { staticClass: "content pt-5" }, [
+    _c("div", { staticClass: "container m-t-5" }, [
+      _c("h1", [_vm._v("Users")]),
+      _vm._v(" "),
+      _c("table", { staticClass: "table" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.users, function(user) {
+            return _c("tr", { key: user.id }, [
+              _c("th", { attrs: { scope: "row" } }, [_vm._v(_vm._s(user.id))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.name))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(user.email))])
+            ])
+          }),
+          0
+        )
+      ])
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("#")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Email")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -54764,7 +54814,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "routes", function() { return routes; });
-/* harmony import */ var _components_Homes_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Homes.vue */ "./resources/js/components/Homes.vue");
+/* harmony import */ var _components_Homes_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Homes.vue */ "./resources/js/components/Homes.vue");
 /* harmony import */ var _components_User_List_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/User/List.vue */ "./resources/js/components/User/List.vue");
 /* harmony import */ var _components_User_Create_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/User/Create.vue */ "./resources/js/components/User/Create.vue");
 
@@ -54773,7 +54823,7 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [{
   name: 'home',
   path: '/home',
-  componet: _components_Homes_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  componet: _components_Homes_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
 }, {
   name: 'user-list',
   path: '/user',
