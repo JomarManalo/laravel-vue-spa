@@ -2002,6 +2002,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'user-list',
   data: function data() {
@@ -37819,10 +37827,24 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "content pt-5" }, [
     _c("div", { staticClass: "container m-t-5" }, [
-      _c("h1", [_vm._v("Users")]),
+      _c("div", { staticClass: "d-flex justify-content-between" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          [
+            _c(
+              "router-link",
+              { staticClass: "btn btn-primary", attrs: { to: "/user/create" } },
+              [_vm._v("Add User")]
+            )
+          ],
+          1
+        )
+      ]),
       _vm._v(" "),
       _c("table", { staticClass: "table" }, [
-        _vm._m(0),
+        _vm._m(1),
         _vm._v(" "),
         _c(
           "tbody",
@@ -37842,6 +37864,12 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("h1", [_vm._v("Users")])])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

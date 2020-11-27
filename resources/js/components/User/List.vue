@@ -1,7 +1,15 @@
 <template>
     <div class="content pt-5">
         <div class="container m-t-5">
-            <h1>Users</h1>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h1>Users</h1>
+                </div>
+                <div>
+                    <router-link to="/user/create" class="btn btn-primary">Add User</router-link>
+                </div>
+            </div>
+            
             <table class="table">
               <thead>
                 <tr>
